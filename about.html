@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Philosophy</title>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #000000;
+            --secondary-color: #333333;
+            --accent-color: #ff6b6b;
+            --light-bg: #f9f9f9;
+            --dark-bg: #222222;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Georgia', serif;
+            
+        }
+        
+        body {
+            background-color: var(--light-bg);
+            color: var(--secondary-color);
+            line-height: 1.8;
+            font-size: 18px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+        
+        .section {
+            margin-bottom: 80px;
+            position: relative;
+        }
+        
+        .section-title {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 30px;
+            color: var(--primary-color);
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: var(--accent-color);
+        }
+        
+        .content-block {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            align-items: center;
+            margin-bottom: 50px;
+            
+        }
+        
+        
+        .text-content {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .image-content {
+            flex: 1;
+            height: 698px;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .image-content img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .image-content:hover img {
+            transform: scale(1.03);
+        }
+        
+        .quote-block {
+            background-color: var(--dark-bg);
+            color: white;
+            padding: 40px;
+            border-radius: 8px;
+            margin: 40px 0;
+            position: relative;
+        }
+        
+        .quote-block::before {
+            content: '"';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 80px;
+            color: rgba(255,255,255,0.1);
+            font-family: serif;
+        }
+        
+        .quote-text {
+            font-size: 22px;
+            font-style: italic;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .two-column {
+            column-count: 2;
+            column-gap: 40px;
+            margin-top: 30px;
+        }
+        
+        @media (max-width: 768px) {
+            .section-title {
+                font-size: 32px;
+            }
+            
+            .content-block {
+                flex-direction: column;
+            }
+            
+            .image-content {
+                height: 300px;
+                order: -1;
+            }
+            
+            .two-column {
+                column-count: 1;
+            }
+            
+            .quote-block {
+                padding: 30px 20px;
+            }
+            
+            .quote-text {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="#" class="logo">nuraya</a>
+            
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            
+            
+            
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="#">Shop</a></li>
+                <li><a href="#">New Arrivals</a></li>
+                <li><a href="#">Collections</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+            
+            <div class="icons">
+                <a href="#"><i class="fas fa-user"></i></a>
+                <a href="#" class="cart-icon">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-count">0</span>
+                </a>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <section class="section">
+            
+            <div class="content-block">
+                <div class="text-content">
+                    <p>Our products are engineered to create an illusion of advanced vision—including its human vision, talent, and new writing, we just need more tolerance. We set extreme energy today and look, embracing one deal that truly is our purpose.</p>
+                </div>
+                <div class="image-content">
+                    <img src="img/eya.jpg" alt="Vision and creativity concept">
+                </div>
+            </div>
+        </section>
+        
+        <!-- NarrativeScience Stage Section -->
+        <section class="section">
+
+            <div class="content-block">
+                <div class="image-content">
+                    <img src="img/lo5ra.jpg" alt="Creative workspace">
+                </div>
+                <div class="text-content">
+                    <p>Black plays it a healthy, successful storyline: brighter light and accelerated running down on modern times transformed into a real testament. One element also truly is what we feel at our level!</p>
+                    
+                    <div class="two-column">
+                        <p>Our approach combines cutting-edge technology with human intuition to create narratives that resonate deeply. The fusion of data and creativity produces unexpected insights.</p>
+                        <p>We believe every dataset tells a story waiting to be discovered. Our process reveals these hidden narratives through advanced analytical techniques.</p>
+                    </div>
+                </div>
+            </div>
+            
+        </section>
+        <section class="section">
+            
+            <div class="content-block">
+                <div class="text-content">
+                    <p>Our products are engineered to create an illusion of advanced vision—including its human vision, talent, and new writing, we just need more tolerance. We set extreme energy today and look, embracing one deal that truly is our purpose.</p>
+                </div>
+                <div class="image-content">
+                    <img src="img/grp.jpg" alt="Vision and creativity concept">
+                </div>
+            </div>
+            
+            
+        </section>
+        
+    </div>
+</body>
+</html>
