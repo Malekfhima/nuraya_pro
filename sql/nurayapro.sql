@@ -3,8 +3,8 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 18, 2025 at 04:07 PM
--- Server version: 10.4.32-MariaDB
+-- Generation Time: Nov 14, 2025 at 05:49 PM
+-- Server version: 11.7.2-MariaDB
 -- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -39,8 +39,27 @@ CREATE TABLE `categories` (
 --
 
 INSERT INTO `categories` (`category_id`, `name`, `description`, `created_at`) VALUES
-(1, 'dajaj', '24242424224', '2025-05-13 20:59:02'),
-(2, 'fa9ouss', 'azerazerazeraz', '2025-05-14 13:27:48');
+(3, 'iaeopgkaeropgk', 'pkopergkoprqdgfgfd', '2025-11-14 15:03:53');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `orders`
+--
+
+CREATE TABLE `orders` (
+  `id` int(11) NOT NULL,
+  `Fname` varchar(100) NOT NULL,
+  `Lname` varchar(100) NOT NULL,
+  `addr` varchar(255) NOT NULL,
+  `codep` varchar(20) DEFAULT NULL,
+  `city` varchar(100) NOT NULL,
+  `tel` varchar(30) NOT NULL,
+  `email` varchar(150) NOT NULL,
+  `list_qua` text NOT NULL,
+  `list_ids` text NOT NULL,
+  `order_date` timestamp NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -66,10 +85,7 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`product_id`, `name`, `description`, `price`, `stock_quantity`, `category_id`, `image_url`, `created_at`, `updated_at`, `collection`) VALUES
-(10, 'azeazeaze', '453453453453453', 5430.00, 543, 1, '../uploads/uploaded/1747335175_wallpaperflare.com_wallpaper.jpg', '2025-05-15 19:52:55', '2025-05-15 19:52:55', ''),
-(12, 'azeazeazeaze8705', '12312312321312312321', 231.00, 453, 1, '../uploads/uploaded/1747335948_dinars-tunisiens-billets.jpg', '2025-05-15 20:05:48', '2025-05-15 20:05:48', ''),
-(15, 'azertyuiop', 'thtredzsdghf,gfed', 55.00, 5, 1, '../uploads/uploaded/1747411610_Capturedcran2025-05-14174507.png', '2025-05-16 17:06:50', '2025-05-16 17:06:50', ''),
-(16, 'Bent chatti', 'azertyuiop\\r\\n', 50.00, 4, 1, '../uploads/uploaded/1747412095_loin.png', '2025-05-16 17:14:55', '2025-05-16 17:14:55', '');
+(17, 'efafaefqsdf', '87637354343123123', 546543.00, 453543543, 3, '../uploads/uploaded/1763132693_screencapture-iso-builder-zety-resume-final-resume-2025-05-25-17_00_221.png', '2025-11-14 15:04:53', '2025-11-14 15:04:53', NULL);
 
 -- --------------------------------------------------------
 
@@ -99,6 +115,12 @@ ALTER TABLE `categories`
   ADD PRIMARY KEY (`category_id`);
 
 --
+-- Indexes for table `orders`
+--
+ALTER TABLE `orders`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `products`
 --
 ALTER TABLE `products`
@@ -121,13 +143,19 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `orders`
+--
+ALTER TABLE `orders`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `user`
