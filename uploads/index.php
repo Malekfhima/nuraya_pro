@@ -42,6 +42,35 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   <title>Product Upload</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <style>
+    /* Center the form container and style it for readability */
+    .form-container {
+      max-width: 820px;
+      width: 100%;
+      margin: 48px auto; /* center horizontally and add top/bottom space */
+      background: #fff;
+      padding: 26px 28px;
+      border-radius: 10px;
+      box-shadow: 0 6px 22px rgba(16,24,40,0.08);
+      box-sizing: border-box;
+    }
+
+    /* Keep the admin sidebar visible on larger screens; adapt the form spacing */
+    @media (min-width: 1000px) {
+      .form-container { margin-left: 260px; max-width: 760px; }
+    }
+
+    /* Make form full-width on small screens */
+    @media (max-width: 768px) {
+      .form-container { margin: 22px 18px; padding: 18px; border-radius: 8px; }
+    }
+
+    .form-container h2 { margin-top: 0; margin-bottom: 18px; font-size: 20px; color: #111827; }
+    .form-group { margin-bottom: 16px; }
+    .form-group label { display: block; margin-bottom: 8px; font-weight: 600; color: #374151; }
+    input[type="text"], input[type="number"], textarea, select { width: 100%; padding: 10px 12px; border: 1px solid #e5e7eb; border-radius: 8px; }
+    .btn { background:#111827;color:#fff;padding:10px 18px;border-radius:8px;border:none;cursor:pointer }
+  </style>
   <script src="main.js"></script>
 </head>
 <body>
@@ -51,10 +80,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <h2><i class="fas fa-plus-circle"></i> Create New Listing</h2>
     <form id="productForm" method="post" enctype="multipart/form-data">
       <div class="form-group">
-        <label for="photos">
-          <i class="fas fa-images"></i> Photos
-          <span class="required">*</span>
-        </label>
+        <label><i class="fas fa-images"></i> Photos <span class="required">*</span></label>
         <div class="photo-upload" id="photoUploadArea">
           <i class="fas fa-camera"></i>
           <p>Drag photos here or click to upload</p>
@@ -101,11 +127,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </label>
         <select name="category" id="category" required>
           <option value="" disabled selected>Select a category</option>
-          <?php while($t = mysqli_fetch_assoc($cat_res)) : ?>
+          <?php 
+          $cat_res = mysqli_query($cnx, "SELECT * FROM categories");
+          while($t = mysqli_fetch_assoc($cat_res)) : ?>
             <option value="<?php echo $t['category_id']; ?>"><?php echo htmlspecialchars($t['name']); ?></option>
           <?php endwhile; ?>
         </select>
-        <div class="input-hint">Select a category for your product</div>
+        <div class="input-hint">Select a category for your product or <a href="../manage/categories.php" style="color: #667eea; text-decoration: none; font-weight: 600;">manage categories</a></div>
       </div>
 
       <div class="form-group">

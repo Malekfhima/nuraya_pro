@@ -30,11 +30,8 @@ $i = 0 ;
             
             <ul class="nav-links">
                 <li><a href="../index.html">Home</a></li>
-                <li><a href="#">Shop</a></li>
-                <li><a href="#">New Arrivals</a></li>
-                <li><a href="#">Collections</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="../about.html">About</a></li>
+                <li><a href="../contact_us.php">Contact</a></li>
             </ul>
             
             <div class="icons">

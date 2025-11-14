@@ -1,0 +1,31 @@
+# Friendly URL mappings for form actions
+# Place this file in the project root (c:/xampp/htdocs/nuraya_pro/.htaccess)
+
+RewriteEngine On
+RewriteBase /nuraya_pro/
+
+# Example: use action="/send-message" in your HTML form to submit to send.php
+RewriteRule ^send-message/?$ send.php [L,QSA]
+
+# Product / ordering related endpoints
+RewriteRule ^submit-order/?$ produits/order.php [L,QSA]
+RewriteRule ^produits-main/?$ produits/main.php [L,QSA]
+RewriteRule ^upload-product/?$ uploads/index.php [L,QSA]
+
+# Admin / management endpoints
+RewriteRule ^manage-edit/?$ manage/edit.php [L,QSA]
+
+# Account / authentication endpoints
+RewriteRule ^register/?$ cree_compte/main.php [L,QSA]
+RewriteRule ^verify-code/?$ cree_compte/verify_code_handler.php [L,QSA]
+
+# Contact form
+RewriteRule ^send-message/?$ send.php [L,QSA]
+
+# Admin login form (note: directory name contains spaces)
+RewriteRule ^admin-login/?$ admin\ login\ page/main.php [L,QSA]
+
+# Notes:
+# - Use the friendly path (e.g. <form action="/send-message" method="post">) instead of the real script path.
+# - The rules above are relative to the project folder; if you deploy under a different base, adjust RewriteBase accordingly.
+# - If you add new form scripts, add corresponding RewriteRule entries here.
