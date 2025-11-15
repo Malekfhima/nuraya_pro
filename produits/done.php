@@ -1,245 +1,254 @@
-
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <title>Done</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Confirmed — Nuraya</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        :root{
-            --bg1:#0f1724;
-            --bg2:#071032;
-            --accent:#4ee1a0;
-            --accent2:#6ad7ff;
-            --muted:rgba(255,255,255,0.08);
-            --glass: rgba(255,255,255,0.06);
-            --text: #e6f3ff;
+        :root {
+            --primary: #000;
+            --accent: #ff6b6b;
+            --bg: #f9f9f9;
+            --muted: #6b7280;
         }
-        html,body{height:100%}
-        body{
-            margin:0;
-            font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-            background: radial-gradient(1200px 600px at 10% 10%, rgba(76,211,255,0.06), transparent),
-                                    linear-gradient(180deg,var(--bg1),var(--bg2));
-            color:var(--text);
-            display:flex;
-            align-items:center;
-            justify-content:center;
-            -webkit-font-smoothing:antialiased;
-            text-rendering:optimizeLegibility;
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
-
-        .card{
-            padding:36px;
-            border-radius:18px;
-            background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
-            box-shadow: 0 10px 30px rgba(2,6,23,0.6), inset 0 1px 0 rgba(255,255,255,0.02);
-            display:grid;
-            grid-template-columns: 180px 1fr;
-            gap:24px;
-            align-items:center;
-            backdrop-filter: blur(6px) saturate(120%);
-            border: 1px solid rgba(255,255,255,0.03);
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: var(--bg);
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
         }
-
-        .visual{
-            width:160px;
-            height:160px;
-            display:flex;
-            align-items:center;
-            justify-content:center;
-            position:relative;
-            margin:auto;
+        
+        .success-container {
+            text-align: center;
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            max-width: 500px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
         }
-
-        /* circle & check */
-        svg { width:140px; height:140px; display:block; }
-        .circle {
-            stroke: rgba(255,255,255,0.08);
-            stroke-width:10;
-            fill:none;
+        
+        .success-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--accent), #ff8787);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+            font-size: 40px;
+            color: white;
+            animation: scaleIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
-        .ring {
-            stroke: url(#g);
-            stroke-width:10;
-            fill:none;
-            filter: drop-shadow(0 6px 18px rgba(20,255,180,0.12));
-            stroke-linecap:round;
-            stroke-linejoin:round;
-            stroke-dasharray: 440;
-            stroke-dashoffset: 440;
-            animation: drawRing 1s forwards cubic-bezier(.2,.9,.2,1) 0.15s;
+        
+        @keyframes scaleIn {
+            0% {
+                transform: scale(0);
+                opacity: 0;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
         }
-        .check {
-            stroke: white;
-            stroke-width:10;
-            fill:none;
-            stroke-linecap:round;
-            stroke-linejoin:round;
-            stroke-dasharray: 80;
-            stroke-dashoffset: 80;
-            animation: drawCheck 0.6s forwards cubic-bezier(.2,.9,.2,1) 0.95s;
+        
+        @keyframes slideUp {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
-
-        @keyframes drawRing {
-            to { stroke-dashoffset: 0; }
+        
+        .success-content {
+            animation: slideUp 0.6s ease-out 0.2s both;
         }
-        @keyframes drawCheck {
-            0% { stroke-dashoffset: 80; transform: translateY(0); }
-            60% { transform: translateY(6px); }
-            100% { stroke-dashoffset: 0; transform: translateY(0); }
+        
+        .success-title {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 12px;
         }
-
-        /* subtle bounce and glow */
-        .visual::after{
-            content:"";
-            position:absolute;
-            width:220px;height:220px;
-            border-radius:50%;
-            background: radial-gradient(circle at 30% 20%, rgba(78,225,160,0.08), transparent 30%),
-                                    radial-gradient(circle at 70% 80%, rgba(106,215,255,0.06), transparent 30%);
-            filter: blur(18px);
-            z-index:-1;
-            transform: scale(0.92);
-            opacity:0;
-            animation: popGlow .9s ease forwards .6s;
+        
+        .success-message {
+            color: var(--muted);
+            font-size: 14px;
+            margin-bottom: 32px;
+            line-height: 1.6;
         }
-        @keyframes popGlow {
-            to { opacity:1; transform: scale(1); }
+        
+        .order-details {
+            background: #f9f9f9;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 32px;
+            border-left: 4px solid var(--accent);
         }
-
-        /* confetti */
+        
+        .order-details p {
+            font-size: 13px;
+            color: var(--muted);
+            margin: 8px 0;
+        }
+        
+        .order-details strong {
+            color: var(--primary);
+            font-weight: 700;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            padding: 12px 32px;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.3s;
+            margin: 0 8px;
+            border: 2px solid var(--primary);
+        }
+        
+        .cta-button:hover {
+            background: var(--accent);
+            border-color: var(--accent);
+            transform: translateY(-2px);
+        }
+        
+        .cta-button.secondary {
+            background: transparent;
+            color: var(--primary);
+        }
+        
+        .cta-button.secondary:hover {
+            background: transparent;
+            color: var(--accent);
+            border-color: var(--accent);
+        }
+        
+        .cta-group {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+        
         .confetti {
-            position:absolute;
-            pointer-events:none;
-            inset:0;
-            overflow:visible;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
         }
+        
         .confetti span {
-            position:absolute;
-            width:10px;height:14px;
-            border-radius:2px;
-            transform-origin:center;
-            opacity:0;
-            will-change: transform, opacity;
-            animation: fall 1.6s cubic-bezier(.2,.85,.2,1) forwards;
+            position: absolute;
+            display: block;
+            animation: confettiFall 3s ease-out forwards;
         }
-        @keyframes fall {
-            0% { transform: translateY(-20vh) rotate(0) scale(1); opacity:0; }
-            12% { opacity:1; }
-            60% { transform: translateY(40vh) rotate(720deg) scale(1.05); }
-            100% { transform: translateY(70vh) rotate(1080deg) scale(0.9); opacity:0; }
+        
+        @keyframes confettiFall {
+            0% {
+                transform: translateY(0) rotateZ(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(800px) rotateZ(720deg);
+                opacity: 0;
+            }
         }
-
-        /* content */
-        .info h1{
-            margin:0 0 6px 0;
-            font-size:28px;
-            letter-spacing:-0.02em;
-        }
-        .info p{
-            margin:0 0 18px 0;
-            color: rgba(230,243,255,0.82);
-            opacity:0.9;
-        }
-        .actions{
-            display:flex;
-            gap:10px;
-            align-items:center;
-        }
-        .btn{
-            display:inline-flex;
-            align-items:center;
-            gap:10px;
-            padding:10px 16px;
-            border-radius:10px;
-            border: none;
-            cursor:pointer;
-            font-weight:600;
-            color: #052027;
-            background: linear-gradient(90deg,var(--accent),var(--accent2));
-            box-shadow: 0 6px 18px rgba(78,225,160,0.14);
-            text-decoration:none;
-        }
-        .muted{
-            background:transparent;
-            color:rgba(230,243,255,0.86);
-            padding:8px 12px;
-            border-radius:8px;
-            border:1px solid rgba(255,255,255,0.03);
-            cursor:pointer;
-        }
-
-        /* small responsive */
-        @media (max-width:600px){
-            .card{ grid-template-columns: 1fr; padding:20px; gap:16px; }
-            .visual{ width:120px; height:120px; }
-            svg{ width:110px; height:110px; }
+        
+        @media (max-width: 600px) {
+            .success-container {
+                padding: 24px;
+            }
+            
+            .success-title {
+                font-size: 22px;
+            }
+            
+            .cta-group {
+                flex-direction: column;
+            }
+            
+            .cta-button {
+                width: 100%;
+                margin: 6px 0;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="card">
-        <div class="visual" aria-hidden="true">
-            <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Success">
-                <defs>
-                    <linearGradient id="g" x1="0" x2="1">
-                        <stop offset="0" stop-color="#4EE1A0"/>
-                        <stop offset="1" stop-color="#6AD7FF"/>
-                    </linearGradient>
-                </defs>
-                <circle class="circle" cx="60" cy="60" r="52"/>
-                <circle class="ring" cx="60" cy="60" r="52" stroke-linecap="round"/>
-                <path class="check" d="M40 62 L54 76 L82 46" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-            <div class="confetti" id="confetti"></div>
+    <div id="confetti" class="confetti"></div>
+    
+    <div class="success-container">
+        <div class="success-icon">
+            <i class="fas fa-check"></i>
         </div>
-        <div class="info">
-            <h1>Order Confirmed!</h1>
-            <p>Thank you for your purchase. Your order has been successfully placed and will be processed shortly.</p>
-            <div class="actions">
-                <a href="../index.html" class="btn">Back to Store</a>
+        
+        <div class="success-content">
+            <h1 class="success-title">Order Confirmed!</h1>
+            <p class="success-message">
+                Thank you for your purchase. Your order has been successfully placed and will be delivered to you shortly.
+            </p>
+            
+            <div class="order-details">
+                <p><strong>Order Status:</strong> Processing</p>
+                <p><strong>Estimated Delivery:</strong> 3-5 business days</p>
+                <p>You will receive a confirmation email shortly with tracking information.</p>
+            </div>
+            
+            <div class="cta-group">
+                <a href="../index.html" class="cta-button">
+                    <i class="fas fa-home"></i> Back to Home
+                </a>
+                <a href="../produits/index.php" class="cta-button secondary">
+                    <i class="fas fa-shopping-bag"></i> Continue Shopping
+                </a>
             </div>
         </div>
     </div>
-
+    
     <script>
-        // Confetti generator - lightweight and self-contained
-        (function(){
+        // Generate confetti
+        (function() {
             const container = document.getElementById('confetti');
-            const colors = ['#FF7A7A','#FFD36A','#4EE1A0','#6AD7FF','#C285FF'];
-            const pieces = 18;
-            for(let i=0;i<pieces;i++){
+            const colors = ['#ff6b6b', '#000', '#f9f9f9', '#6b7280'];
+            const pieces = 20;
+            
+            for (let i = 0; i < pieces; i++) {
                 const el = document.createElement('span');
-                const w = 8 + Math.random()*8;
-                el.style.width = w + 'px';
-                el.style.height = (10 + Math.random()*10) + 'px';
-                el.style.left = (30 + Math.random()*100) + '%';
-                el.style.top = (10 + Math.random()*10) + '%';
-                el.style.background = colors[Math.floor(Math.random()*colors.length)];
-                el.style.transform = 'rotate('+ (Math.random()*360) +'deg)';
-                el.style.borderRadius = (Math.random()>0.6? '50%':'2px');
-                el.style.animationDelay = (Math.random()*0.6 + 0.05) + 's';
-                el.style.opacity = 0;
-                el.style.boxShadow = '0 2px 6px rgba(2,6,23,0.18)';
+                const size = 6 + Math.random() * 8;
+                el.style.width = size + 'px';
+                el.style.height = size + 'px';
+                el.style.left = Math.random() * 100 + '%';
+                el.style.top = -10 + 'px';
+                el.style.background = colors[Math.floor(Math.random() * colors.length)];
+                el.style.borderRadius = Math.random() > 0.5 ? '50%' : '2px';
+                el.style.opacity = Math.random() * 0.8 + 0.2;
+                el.style.animationDelay = Math.random() * 0.3 + 's';
                 container.appendChild(el);
             }
-
-            // small pulse on done to draw attention
-            const ring = document.querySelector('.ring');
-            ring.addEventListener('animationend', function(){
-                ring.animate([
-                    { transform: 'scale(1)', opacity:1 },
-                    { transform: 'scale(1.06)', opacity:0.98 },
-                    { transform: 'scale(1)', opacity:1 }
-                ], { duration: 420, easing: 'ease-out' });
-            });
-
-            // focus for keyboard users
-            window.addEventListener('load', ()=> {
-                const btn = document.querySelector('.btn');
-                if(btn) btn.focus();
-            });
         })();
     </script>
 </body>

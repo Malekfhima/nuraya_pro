@@ -24,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // Expéditeur et destinataire
         $mail->setFrom($email, $name);
-        $mail->addAddress('malekfhima1@gmail.com');
+        $mail->addAddress('malali3b@gmail.com'); // Change recipient to malali3b@gmail.com
 
         // Contenu HTML
         $mail->isHTML(true);
@@ -44,11 +44,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mail->AltBody = "Nom: $name\nEmail: $email\nTéléphone: $phone\n\nMessage:\n$comment";
 
         $mail->send();
-        echo "<script>alert('Message envoyé avec succès !');</script>";
+        echo "<script>alert('Message envoyé avec succès ! Nous vous répondrons rapidement.');</script>";
         header('Location: contact_us.php');
         exit;
     } catch (Exception $e) {
-        echo "Erreur lors de l'envoi : {$mail->ErrorInfo}";
+        echo "<script>alert('Erreur lors de l\\'envoi du message : {$mail->ErrorInfo}');</script>";
+        header('Location: contact_us.php');
+        exit;
     }
 }
 ?>

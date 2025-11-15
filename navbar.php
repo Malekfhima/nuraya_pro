@@ -24,12 +24,7 @@ session_start();
             <li><a href="about.html">About</a></li>
         </ul>
         <div class="icons">
-            <?php if (isset($_SESSION['id'])): ?>
-                <a href="mon_compte.php"><i class="fas fa-user"></i></a>
-                <a href="panier.php" class="cart-icon"><i class="fas fa-shopping-bag"></i><span class="cart-count"><?php echo isset($_SESSION['panier'])?count($_SESSION['panier']):0; ?></span></a>
-            <?php else: ?>
-                <a href="login.php"><i class="fas fa-user"></i></a>
-            <?php endif; ?>
+            <a href="panier.php" class="cart-icon"><i class="fas fa-shopping-bag"></i><span class="cart-count"><?php echo isset($_SESSION['panier'])?count($_SESSION['panier']):0; ?></span></a>
         </div>
     </nav>
 </header>
