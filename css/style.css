@@ -694,18 +694,43 @@ section {
 }
 
 .photo-upload {
-  border: 2px dashed #ccc;
-  padding: 20px;
+  border: 2px dashed var(--border-color);
+  padding: 30px;
   text-align: center;
   cursor: pointer;
+  border-radius: 8px;
+  background: var(--bg-light);
+  transition: all var(--transition-speed) ease;
+  position: relative;
+  overflow: hidden;
 }
 
 .photo-upload:hover {
-  border-color: #999;
+  border-color: var(--accent-color);
+  background: rgba(195, 117, 200, 0.05);
 }
 
-.required {
-  color: red;
+.photo-upload i {
+  font-size: 48px;
+  color: var(--accent-color);
+  margin-bottom: 15px;
+  display: block;
+}
+
+.photo-upload p {
+  color: var(--text-dark);
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.photo-upload .upload-hint {
+  color: var(--text-light);
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.photo-upload input[type="file"] {
+  display: none;
 }
 
 /* Verification Page Styles */
@@ -767,6 +792,67 @@ section {
 .form-container h2 i {
   color: var(--accent-color);
   margin-right: 10px;
+}
+
+.price-container,
+.quantity-container {
+  position: relative;
+}
+
+.price-container input,
+.quantity-container input {
+  width: 100%;
+  padding: 12px 16px 12px 40px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 16px;
+  transition: all var(--transition-speed) ease;
+}
+
+.price-container input:focus,
+.quantity-container input:focus {
+  outline: none;
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 3px rgba(195, 117, 200, 0.1);
+}
+
+.price-container::before {
+  content: "";
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23666' viewBox='0 0 24 24'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1.41 16.09V20h-2.67v-1.93c-1.71-.36-3.16-1.46-3.27-3.4h1.96c.1.81.45 1.61 1.67 1.61 1.16 0 1.6-.64 1.6-1.46 0-.84-.68-1.22-1.88-1.56-1.85-.49-3.03-1.21-3.03-3.1 0-1.46 1.07-2.71 2.93-3.05V5.12h2.67v1.95c1.86.45 2.79 1.86 2.85 3.39H14.3c-.05-1.11-.64-1.63-1.63-1.63-1.01 0-1.46.55-1.46 1.28 0 .73.56 1.12 1.78 1.46 1.88.49 3.13 1.17 3.13 3.22 0 1.67-1.18 2.89-3.01 3.3z'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.quantity-container::before {
+  content: "";
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23666' viewBox='0 0 24 24'%3E%3Cpath d='M19 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.11 0 2-.9 2-2V5c0-1.1-.89-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.input-hint {
+  font-size: 12px;
+  color: var(--text-light);
+  margin-top: 5px;
+}
+
+.required {
+  color: #e74c3c;
+  margin-left: 4px;
 }
 
 /* Checkout Container Styles */
