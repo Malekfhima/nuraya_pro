@@ -4,46 +4,48 @@ $cat_res = mysqli_query($cnx, "SELECT * FROM categories");
 
 // Handle form submission
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $title = mysqli_real_escape_string($cnx, $_POST['title']);
-    $description = mysqli_real_escape_string($cnx, $_POST['description']);
-    $price = (float)$_POST['price'];
-    $quantity = (int)$_POST['quantity'];
-    $category = (int)$_POST['category'];
+  $title = mysqli_real_escape_string($cnx, $_POST['title']);
+  $description = mysqli_real_escape_string($cnx, $_POST['description']);
+  $price = (float) $_POST['price'];
+  $quantity = (int) $_POST['quantity'];
+  $category = (int) $_POST['category'];
 
-    $upload_dir = "../uploads/uploaded/";
-    $img_name = basename($_FILES["pro_images"]["name"]);
-    $img_name = preg_replace("/[^A-Za-z0-9.\-_]/", '', $img_name); // Nettoyer le nom
-    $pro_images = $upload_dir . time() . "_" . $img_name; // Renommer avec timestamp
+  $upload_dir = "../uploads/uploaded/";
+  $img_name = basename($_FILES["pro_images"]["name"]);
+  $img_name = preg_replace("/[^A-Za-z0-9.\-_]/", '', $img_name); // Nettoyer le nom
+  $pro_images = $upload_dir . time() . "_" . $img_name; // Renommer avec timestamp
 
-    if (move_uploaded_file($_FILES["pro_images"]["tmp_name"], $pro_images)) {
-        $d = date("Y-m-d H:i:s");
+  if (move_uploaded_file($_FILES["pro_images"]["tmp_name"], $pro_images)) {
+    $d = date("Y-m-d H:i:s");
 
-        $stmt = mysqli_prepare($cnx, "INSERT INTO products (name, description, price, stock_quantity, category_id, image_url, created_at, updated_at) 
+    $stmt = mysqli_prepare($cnx, "INSERT INTO products (name, description, price, stock_quantity, category_id, image_url, created_at, updated_at) 
                                       VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
-        mysqli_stmt_bind_param($stmt, 'ssdiisss', $title, $description, $price, $quantity, $category, $pro_images, $d, $d);
-        $result_of_ins = mysqli_stmt_execute($stmt);
-        mysqli_stmt_close($stmt);
+    mysqli_stmt_bind_param($stmt, 'ssdiisss', $title, $description, $price, $quantity, $category, $pro_images, $d, $d);
+    $result_of_ins = mysqli_stmt_execute($stmt);
+    mysqli_stmt_close($stmt);
 
-        if ($result_of_ins) {
-            echo "<script>alert('Product successfully added.');</script>";
-        } else {
-            echo "<script>alert('Database insertion error.');</script>";
-        }
+    if ($result_of_ins) {
+      echo "<script>alert('Product successfully added.');</script>";
     } else {
-        echo "<script>alert('File upload failed.');</script>";
+      echo "<script>alert('Database insertion error.');</script>";
     }
+  } else {
+    echo "<script>alert('File upload failed.');</script>";
+  }
 }
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Product Upload</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="../css/style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <script src="main.js"></script>
 </head>
+
 <body>
   <?php include '../adminsidebar.php'; ?>
 
@@ -59,7 +61,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           <i class="fas fa-camera"></i>
           <p>Drag photos here or click to upload</p>
           <p class="upload-hint">Supported formats: JPG, PNG, GIF (Max 5MB each)</p>
-          <input type="file" id="photos" name="pro_images" accept="image/*" required style="display: none;">
+          <input type="file" id="photos" name="pro_images" accept="image/*" required>
         </div>
       </div>
 
@@ -101,7 +103,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </label>
         <select name="category" id="category" required>
           <option value="" disabled selected>Select a category</option>
-          <?php while($t = mysqli_fetch_assoc($cat_res)) : ?>
+          <?php while ($t = mysqli_fetch_assoc($cat_res)): ?>
             <option value="<?php echo $t['category_id']; ?>"><?php echo htmlspecialchars($t['name']); ?></option>
           <?php endwhile; ?>
         </select>
@@ -113,7 +115,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           <i class="fas fa-align-left"></i> Description
           <span class="required">*</span>
         </label>
-        <textarea id="description" name="description" placeholder="Include details like size, brand, color, condition, etc." required minlength="10"></textarea>
+        <textarea id="description" name="description"
+          placeholder="Include details like size, brand, color, condition, etc." required minlength="10"></textarea>
         <div class="input-hint">Minimum 10 characters</div>
       </div>
 
@@ -123,5 +126,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </form>
   </div>
 </body>
+
 </html>
-<?php mysqli_close($cnx);?>
+<?php mysqli_close($cnx); ?>

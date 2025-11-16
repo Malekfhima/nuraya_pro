@@ -2,6 +2,11 @@
             background-color: #f5f5f5;
             padding: 20px;
         }
+        .product-list{
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
         
         .product-card-horizontal {
             display: flex;
@@ -43,47 +48,7 @@
         }
         
         .product-description {
-            margin-bottom: 20px;
-            font-size: 14px;
-            line-height: 1.5;
-            color: #555;
-        }
-        
-        .price-section {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 20px;
-        }
-        
-        .current-price {
-            font-size: 24px;
-            font-weight: bold;
-            color: #d32f2f;
-        }
-        
-        .action-buttons {
-            display: flex;
-            gap: 10px;
-        }
-        
-        .add-to-cart, .quote-btn {
-            flex: 1;
-            padding: 12px;
-            border: none;
             border-radius: 4px;
             font-weight: bold;
             cursor: pointer;
-            font-size: 14px;
-        }
-        
-        .add-to-cart {
-            background-color: #d32f2f;
-            color: white;
-        }
-        
-        .quote-btn {
-            background-color: #f5f5f5;
-            color: #333;
-            border: 1px solid #ddd;
         }

@@ -1,90 +1,209 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Navigation Bar</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NURAYA - L'Art de la Modestie</title>
+    <meta
+      name="description"
+      content="NURAYA - Collection de mode modeste inspirée par l'héritage carthaginois"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
     <nav>
-        <div class="nav-links">
-            <a href="#">Accueil</a>
-            <a href="produits/index.php">Produits</a>
-            <a href="contact_us.php">contact</a>
-            <a href="about.html">A propos</a>
-            <a href="logout.php">deconnexion</a>
-        </div>
-        <div class="logo">
-            <a href="#" class="brand"><img src="img/brand-logo.png" alt="Logo" width="100px"></a>
-        </div>
-        <div class="nav-icons">
-            <a href="#"><i class="fas fa-search"></i></a>
-            <a href="cree_compte/index.php"><i class="fas fa-user"></i></a>
-            <a href="#"><i class="fas fa-shopping-bag"></i></a>
-        </div>
+      <div class="nav-links">
+        <a href="#">Accueil</a>
+        <a href="produits/index.php">Produits</a>
+        <a href="produits/index.php">Boutique</a>
+        <a href="contact_us.php">contact</a>
+        <a href="about.html">A propos</a>
+        <a href="logout.php">deconnexion</a>
+      </div>
+      <div class="logo">
+        
+      </div>
+      <div class="nav-icons">
+        <a href="#" class="search-btn"><i class="fas fa-search"></i></a>
+        <a href="cree_compte/index.php" class="user-btn"
+          ><i class="fas fa-user"></i
+        ></a>
+        <a href="cart/index.php" class="cart-btn"
+          ><i class="fas fa-shopping-bag"></i
+        ></a>
+      </div>
     </nav>
     <section class="hero">
-        <!-- Images animées -->
-        <img src="img/gauche.png" alt="Mode Modeste" class="hero-image image-left">
-        <img src="img/droit.png" alt="Collection Nuraya" class="hero-image image-right">
-        
-        <!-- Texte -->
+      <!-- Images animées -->
+      <img
+        src="img/gauche.png"
+        alt="Mode Modeste Collection"
+        class="hero-image image-left"
+      />
+      <img
+        src="img/droit.png"
+        alt="Collection Nuraya"
+        class="hero-image image-right"
+      />
+
+      <!-- Texte -->
+      <div class="hero-content">
         <h1>NURAYA</h1>
         <p>L'ART DE LA MODESTIE</p>
+        <a href="#products" class="cta-button">Découvrir la Collection</a>
+      </div>
     </section>
-    <hr>
-    <h2 class="drop-title" >Legacy of Carthage drop</h2>
-    
-    <div class="products-container">
-        <!-- Produit 1 -->
-         <a href="">
-            <div class="product-card">
-            <center><img src="img/droit.png" alt="Human Hotdle" class="product-image" onmouseover="this.src='img/gauche.png'" 
-                onmouseout="this.src='img/droit.png'"></center>
-            
-            <div class="product-info">
-                <div class="product-name">Legacy of Carthage: Human Hotdle</div>
-                <div class="product-price"><span class="price-highlight">85.000 DT</span></div>
-            </div>
-            </div>
-        </a>
-        
-        
-        <!-- Produit 2 -->
-        <a href="">
-            <div class="product-card">
-                <center><img src="img/loin.png" alt="Mandarin's Hotdle" class="product-image" onmouseover="this.src='img/aproch.png'" onmouseout="this.src='img/loin.png'"></center>
+    <section id="products" class="products-section">
+      <div class="container">
+        <h2 class="drop-title">Legacy of Carthage Collection</h2>
 
-                <div class="product-info">
-                    <div class="product-name">Legacy of Carthage: Mandarin's Hotdle</div>
-                    <div class="product-price"><span class="price-highlight">95.000 DT</span></div>
-                </div>
+        <div class="products-container">
+          <!-- Produit 1 -->
+          <div class="product-card">
+            <div class="product-image-container">
+              <img
+                src="img/droit.png"
+                alt="Human Hotdle"
+                class="product-image primary-image"
+              />
+              <img
+                src="img/gauche.png"
+                alt="Human Hotdle Vue 2"
+                class="product-image secondary-image"
+              />
             </div>
-        </a>
-        
-        <!-- Produit 3 -->
-        <a href="">
-            <div class="product-card">
-                <center><img src="img/1.png" alt="Carthagenias Helmet" class="product-image" onmouseover="this.src='img/2.png'" onmouseout="this.src='img/1.png'"></center>
-                <div class="product-info">
-                    <div class="product-name">Carthagenias Helmet (Balasiana)</div>
-                    <div class="product-price"><span class="price-highlight">10.000 DT</span></div>
-                </div>
+            <div class="product-info">
+              <h3 class="product-name">Legacy of Carthage: Human Hotdle</h3>
+              <div class="product-price">
+                <span class="price-highlight">85.000 DT</span>
+              </div>
+              <button
+                class="add-to-cart-btn"
+                data-product="Human Hotdle"
+                data-price="85.000"
+              >
+                <i class="fas fa-shopping-cart"></i> Ajouter au panier
+              </button>
+              <a href="produits/index.php" class="view-product-btn"
+                >Voir détails</a
+              >
             </div>
-        </a>
-    </div>
-    <hr>
-    
-    <script>
-window.addEventListener('beforeunload', function(e) {
-    fetch('logout.php', {
-        method: 'GET',
-        keepalive: true,
-        credentials: 'same-origin'
-    });
-});
-</script>
-</body>
+          </div>
+
+          <!-- Produit 2 -->
+          <div class="product-card">
+            <div class="product-image-container">
+              <img
+                src="img/loin.png"
+                alt="Mandarin's Hotdle"
+                class="product-image primary-image"
+              />
+              <img
+                src="img/aproch.png"
+                alt="Mandarin's Hotdle Vue 2"
+                class="product-image secondary-image"
+              />
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">
+                Legacy of Carthage: Mandarin's Hotdle
+              </h3>
+              <div class="product-price">
+                <span class="price-highlight">95.000 DT</span>
+              </div>
+              <button
+                class="add-to-cart-btn"
+                data-product="Mandarin's Hotdle"
+                data-price="95.000"
+              >
+                <i class="fas fa-shopping-cart"></i> Ajouter au panier
+              </button>
+              <a href="produits/index.php" class="view-product-btn"
+                >Voir détails</a
+              >
+            </div>
+          </div>
+
+          <!-- Produit 3 -->
+          <div class="product-card">
+            <div class="product-image-container">
+              <img
+                src="img/1.png"
+                alt="Carthagenias Helmet"
+                class="product-image primary-image"
+              />
+              <img
+                src="img/2.png"
+                alt="Carthagenias Helmet Vue 2"
+                class="product-image secondary-image"
+              />
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">Carthagenias Helmet (Balasiana)</h3>
+              <div class="product-price">
+                <span class="price-highlight">10.000 DT</span>
+              </div>
+              <button
+                class="add-to-cart-btn"
+                data-product="Carthagenias Helmet"
+                data-price="10.000"
+              >
+                <i class="fas fa-shopping-cart"></i> Ajouter au panier
+              </button>
+              <a href="produits/index.php" class="view-product-btn"
+                >Voir détails</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>NURAYA</h3>
+            <p>L'Art de la Modestie</p>
+            <div class="social-links">
+              <a href="#"><i class="fab fa-facebook"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+          </div>
+          <div class="footer-section">
+            <h4>Liens Utiles</h4>
+            <ul>
+              <li><a href="#">Accueil</a></li>
+              <li><a href="produits/index.php">Produits</a></li>
+              <li><a href="about.html">À Propos</a></li>
+              <li><a href="contact_us.php">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>Service Client</h4>
+            <ul>
+              <li><a href="#">Livraison</a></li>
+              <li><a href="#">Retours</a></li>
+              <li><a href="#">Guide des tailles</a></li>
+              <li><a href="#">FAQ</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>Contact</h4>
+            <p><i class="fas fa-envelope"></i> contact@nuraya.com</p>
+            <p><i class="fas fa-phone"></i> +216 XX XXX XXX</p>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2024 NURAYA. Tous droits réservés.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+  </body>
 </html>

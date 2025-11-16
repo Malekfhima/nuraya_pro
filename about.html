@@ -1,237 +1,239 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Philosophy</title>
-    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
-    <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        :root {
-            --primary-color: #000000;
-            --secondary-color: #333333;
-            --accent-color: #ff6b6b;
-            --light-bg: #f9f9f9;
-            --dark-bg: #222222;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Georgia', serif;
-            
-        }
-        
-        body {
-            background-color: var(--light-bg);
-            color: var(--secondary-color);
-            line-height: 1.8;
-            font-size: 18px;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 60px 20px;
-        }
-        
-        .section {
-            margin-bottom: 80px;
-            position: relative;
-        }
-        
-        .section-title {
-            font-size: 42px;
-            font-weight: 700;
-            margin-bottom: 30px;
-            color: var(--primary-color);
-            position: relative;
-            display: inline-block;
-        }
-        
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 0;
-            width: 80px;
-            height: 4px;
-            background: var(--accent-color);
-        }
-        
-        .content-block {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 40px;
-            align-items: center;
-            margin-bottom: 50px;
-            
-        }
-        
-        
-        .text-content {
-            flex: 1;
-            min-width: 300px;
-        }
-        
-        .image-content {
-            flex: 1;
-            height: 698px;
-            overflow: hidden;
-            border-radius: 8px;
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-        }
-        
-        .image-content img {
-            width: 100%;
-            height: auto;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-        
-        .image-content:hover img {
-            transform: scale(1.03);
-        }
-        
-        .quote-block {
-            background-color: var(--dark-bg);
-            color: white;
-            padding: 40px;
-            border-radius: 8px;
-            margin: 40px 0;
-            position: relative;
-        }
-        
-        .quote-block::before {
-            content: '"';
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            font-size: 80px;
-            color: rgba(255,255,255,0.1);
-            font-family: serif;
-        }
-        
-        .quote-text {
-            font-size: 22px;
-            font-style: italic;
-            margin-bottom: 20px;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .two-column {
-            column-count: 2;
-            column-gap: 40px;
-            margin-top: 30px;
-        }
-        
-        @media (max-width: 768px) {
-            .section-title {
-                font-size: 32px;
-            }
-            
-            .content-block {
-                flex-direction: column;
-            }
-            
-            .image-content {
-                height: 300px;
-                order: -1;
-            }
-            
-            .two-column {
-                column-count: 1;
-            }
-            
-            .quote-block {
-                padding: 30px 20px;
-            }
-            
-            .quote-text {
-                font-size: 18px;
-            }
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <nav class="navbar">
-            <a href="#" class="logo">nuraya</a>
-            
-            <button class="mobile-menu-btn">
-                <i class="fas fa-bars"></i>
-            </button>
-            
-            
-            
-            
-            <ul class="nav-links">
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="#">Shop</a></li>
-                <li><a href="#">New Arrivals</a></li>
-                <li><a href="#">Collections</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-            
-            <div class="icons">
-                <a href="#"><i class="fas fa-user"></i></a>
-                <a href="#" class="cart-icon">
-                    <i class="fas fa-shopping-bag"></i>
-                    <span class="cart-count">0</span>
-                </a>
-            </div>
-        </nav>
-    </header>
-    <div class="container">
-        <section class="section">
-            
-            <div class="content-block">
-                <div class="text-content">
-                    <p>Our products are engineered to create an illusion of advanced vision—including its human vision, talent, and new writing, we just need more tolerance. We set extreme energy today and look, embracing one deal that truly is our purpose.</p>
-                </div>
-                <div class="image-content">
-                    <img src="img/eya.jpg" alt="Vision and creativity concept">
-                </div>
-            </div>
-        </section>
-        
-        <!-- NarrativeScience Stage Section -->
-        <section class="section">
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>À Propos - NURAYA</title>
+    <meta
+      name="description"
+      content="Découvrez l'histoire et la philosophie de NURAYA - L'Art de la Modestie"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Navigation (même que index.html) -->
+    <nav>
+      <div class="nav-links">
+        <a href="index.html">Accueil</a>
+        <a href="produits/index.php">Produits</a>
+        <a href="produits/index.php">Boutique</a>
+        <a href="contact_us.php">contact</a>
+        <a href="about.html" class="active">A propos</a>
+        <a href="logout.php">deconnexion</a>
+      </div>
+      <div class="logo"></div>
+      <div class="nav-icons">
+        <a href="#" class="search-btn"><i class="fas fa-search"></i></a>
+        <a href="cree_compte/index.php" class="user-btn"
+          ><i class="fas fa-user"></i
+        ></a>
+        <a href="cart/index.php" class="cart-btn"
+          ><i class="fas fa-shopping-bag"></i
+        ></a>
+      </div>
+    </nav>
 
-            <div class="content-block">
-                <div class="image-content">
-                    <img src="img/lo5ra.jpg" alt="Creative workspace">
-                </div>
-                <div class="text-content">
-                    <p>Black plays it a healthy, successful storyline: brighter light and accelerated running down on modern times transformed into a real testament. One element also truly is what we feel at our level!</p>
-                    
-                    <div class="two-column">
-                        <p>Our approach combines cutting-edge technology with human intuition to create narratives that resonate deeply. The fusion of data and creativity produces unexpected insights.</p>
-                        <p>We believe every dataset tells a story waiting to be discovered. Our process reveals these hidden narratives through advanced analytical techniques.</p>
-                    </div>
-                </div>
+    <!-- Hero Section -->
+    <section class="about-hero">
+      <div class="about-hero-content">
+        <h1>À Propos de NURAYA</h1>
+        <p>
+          Découvrez notre histoire et notre passion pour l'art de la mode
+          modeste
+        </p>
+      </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="about-content">
+      <div class="container">
+        <!-- Story Section -->
+        <section class="story-section">
+          <h2 class="drop-title">Notre Histoire</h2>
+
+          <div class="story-grid">
+            <div class="story-text">
+              <h3>L'Héritage Carthaginois</h3>
+              <p>
+                NURAYA puise son inspiration dans le riche héritage de la
+                civilisation carthaginoise, mêlant tradition et modernité pour
+                créer des pièces uniques qui célèbrent l'élégance et la
+                modestie.
+              </p>
+              <p>
+                Chaque création est le fruit d'un savoir-faire artisanal
+                transmis de génération en génération, adapté aux tendances
+                contemporaines tout en préservant notre identité culturelle.
+              </p>
             </div>
-            
-        </section>
-        <section class="section">
-            
-            <div class="content-block">
-                <div class="text-content">
-                    <p>Our products are engineered to create an illusion of advanced vision—including its human vision, talent, and new writing, we just need more tolerance. We set extreme energy today and look, embracing one deal that truly is our purpose.</p>
-                </div>
-                <div class="image-content">
-                    <img src="img/grp.jpg" alt="Vision and creativity concept">
-                </div>
+            <div class="story-image">
+              <img src="img/eya.jpg" alt="Héritage Carthaginois" />
             </div>
-            
-            
+          </div>
+
+          <div class="story-grid">
+            <div class="story-image">
+              <img src="img/lo5ra.jpg" alt="Artisanat Moderne" />
+            </div>
+            <div class="story-text">
+              <h3>L'Art de la Modestie</h3>
+              <p>
+                Nous croyons que la véritable élégance réside dans l'équilibre
+                entre tradition et innovation. Nos collections reflètent cette
+                philosophie, offrant des pièces qui allient confort, style et
+                valeurs.
+              </p>
+              <p>
+                Chaque vêtement est conçu pour mettre en valeur la beauté
+                naturelle tout en respectant les principes de la mode modeste,
+                créant ainsi un style unique et intemporel.
+              </p>
+            </div>
+          </div>
         </section>
-        
-    </div>
-</body>
+      </div>
+    </main>
+
+    <!-- Values Section -->
+    <section class="values-section">
+      <div class="container">
+        <h2 class="drop-title">Nos Valeurs</h2>
+
+        <div class="values-grid">
+          <div class="value-card">
+            <div class="value-icon">
+              <i class="fas fa-gem"></i>
+            </div>
+            <h3 class="value-title">Qualité</h3>
+            <p class="value-description">
+              Des matériaux premium et un savoir-faire artisanal pour des pièces
+              durables et élégantes.
+            </p>
+          </div>
+
+          <div class="value-card">
+            <div class="value-icon">
+              <i class="fas fa-heart"></i>
+            </div>
+            <h3 class="value-title">Passion</h3>
+            <p class="value-description">
+              Une dévotion absolue à l'art de la mode modeste, créée avec amour
+              et attention.
+            </p>
+          </div>
+
+          <div class="value-card">
+            <div class="value-icon">
+              <i class="fas fa-leaf"></i>
+            </div>
+            <h3 class="value-title">Durabilité</h3>
+            <p class="value-description">
+              Un engagement envers des pratiques éthiques et respectueuses de
+              l'environnement.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team-section">
+      <div class="container">
+        <h2 class="drop-title">Notre Équipe</h2>
+
+        <div class="team-grid">
+          <div class="team-member">
+            <div class="member-image">
+              <img src="img/grp.jpg" alt="Designer" />
+            </div>
+            <div class="member-info">
+              <h3 class="member-name">Sophie Ben Ali</h3>
+              <p class="member-role">Directrice Créative</p>
+              <p class="member-bio">
+                Passionnée par l'union de la tradition et de la modernité dans
+                la mode modeste.
+              </p>
+            </div>
+          </div>
+
+          <div class="team-member">
+            <div class="member-image">
+              <img src="img/eya.jpg" alt="Artisan" />
+            </div>
+            <div class="member-info">
+              <h3 class="member-name">Youssef Trabelsi</h3>
+              <p class="member-role">Maître Artisan</p>
+              <p class="member-bio">
+                Gardien du savoir-faire traditionnel avec plus de 20 ans
+                d'expérience.
+              </p>
+            </div>
+          </div>
+
+          <div class="team-member">
+            <div class="member-image">
+              <img src="img/loin.png" alt="Styliste" />
+            </div>
+            <div class="member-info">
+              <h3 class="member-name">Leila Karray</h3>
+              <p class="member-role">Styliste</p>
+              <p class="member-bio">
+                Spécialiste dans l'adaptation des tendances modernes aux valeurs
+                de la modestie.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>NURAYA</h3>
+            <p>L'Art de la Modestie</p>
+            <div class="social-links">
+              <a href="#"><i class="fab fa-facebook"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+          </div>
+          <div class="footer-section">
+            <h4>Liens Utiles</h4>
+            <ul>
+              <li><a href="index.html">Accueil</a></li>
+              <li><a href="produits/index.php">Produits</a></li>
+              <li><a href="about.html">À Propos</a></li>
+              <li><a href="contact_us.php">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>Service Client</h4>
+            <ul>
+              <li><a href="#">Livraison</a></li>
+              <li><a href="#">Retours</a></li>
+              <li><a href="#">Guide des tailles</a></li>
+              <li><a href="#">FAQ</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>Contact</h4>
+            <p><i class="fas fa-envelope"></i> contact@nuraya.com</p>
+            <p><i class="fas fa-phone"></i> +216 XX XXX XXX</p>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2024 NURAYA. Tous droits réservés.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+  </body>
 </html>
