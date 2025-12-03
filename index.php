@@ -10,15 +10,6 @@
         :root{--primary:#000;--muted:#6b7280;--accent:#ff6b6b;--bg:#f9f9f9}
         *{box-sizing:border-box;margin:0;padding:0}
         body{font-family:'Montserrat',sans-serif;background:var(--bg);color:#111}
-        /* Navbar (same theme as about page) */
-        .navbar{display:flex;align-items:center;justify-content:space-between;padding:18px 28px;background:transparent}
-        .navbar .logo{font-weight:700;font-size:20px;color:var(--primary);text-decoration:none}
-        .nav-links{display:flex;gap:18px;list-style:none;margin:0;padding:0;align-items:center}
-        .nav-links a{color:var(--primary);text-decoration:none;font-weight:600;padding:8px 10px;border-radius:6px}
-        .nav-links a:hover{color:var(--accent)}
-        .icons{display:flex;gap:12px;align-items:center}
-        .cart-icon{position:relative}
-        .cart-count{position:absolute;top:-6px;right:-8px;background:var(--accent);color:#fff;border-radius:50%;width:18px;height:18px;display:flex;align-items:center;justify-content:center;font-size:11px}
 
         /* Hero */
         .hero{display:flex;align-items:center;justify-content:center;flex-direction:column;min-height:420px;margin:22px 28px;border-radius:12px;background:linear-gradient(90deg,rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url('img/850x450-Pix_9-1.jpg') center/cover no-repeat;text-align:center;padding:40px}
@@ -44,17 +35,7 @@
 </head>
 <body>
     <header>
-        <nav class="navbar">
-            <a class="logo" href="index.html">nuraya</a>
-            <ul class="nav-links">
-                <li><a href="produits/index.php">Shop</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact_us.php">Contact</a></li>
-            </ul>
-            <div class="icons">
-                <a href="produits/index.php" class="cart-icon"><i class="fas fa-shopping-bag"></i><span class="cart-count">0</span></a>
-            </div>
-        </nav>
+        <?php include('navbar.php'); ?>
     </header>
 
     <section class="hero">
@@ -65,7 +46,7 @@
     <div class="section">
         <h2 class="drop-title">Legacy of Carthage — Collection</h2>
         <div class="products-container">
-            <a href="produits/index.php">
+            <a href="shop">
                 <div class="product-card">
                     <img class="product-image" src="img/IMG_8003.webp">
                     <div class="product-info">
@@ -75,7 +56,7 @@
                 </div>
             </a>
 
-            <a href="produits/index.php">
+            <a href="shop">
                 <div class="product-card">
                     <img class="product-image" src="img/Gear-Cargo-Pants-are-Back-1302952122.webp">
                     <div class="product-info">
@@ -85,7 +66,7 @@
                 </div>
             </a>
 
-            <a href="produits/index.php">
+            <a href="shop">
                 <div class="product-card">
                     <img class="product-image" src="img/9.webp">
                     <div class="product-info">

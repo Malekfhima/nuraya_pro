@@ -277,7 +277,7 @@ if($_SERVER['REQUEST_METHOD'] === "POST"):
 </head>
 <body>
     <div class="navbar">
-        <a href="../index.html" class="logo">nuraya</a>
+        <a href="../index.php" class="logo">nuraya</a>
     </div>
     
     <div class="checkout-container">
@@ -307,7 +307,7 @@ if($_SERVER['REQUEST_METHOD'] === "POST"):
                     Delivery Information
                 </h2>
                 
-                <form action="order.php" method="post" id="orderForm" novalidate>
+                <form action="/nuraya_pro/submit-order" method="post" id="orderForm" novalidate>
                     <div class="form-row">
                         <div class="form-group">
                             <label class="form-label">First name <span style="color: var(--accent);">*</span></label>

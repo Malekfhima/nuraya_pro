@@ -1,31 +1,51 @@
-# Friendly URL mappings for form actions
-# Place this file in the project root (c:/xampp/htdocs/nuraya_pro/.htaccess)
+# Security & Friendly URL Rules for Nuraya E-Commerce
+# Apache mod_rewrite configuration
 
+# Enable mod_rewrite engine
 RewriteEngine On
 RewriteBase /nuraya_pro/
 
-# Example: use action="/send-message" in your HTML form to submit to send.php
+# ============================================
+# SECURITY RULES
+# ============================================
+
+# Block access to sensitive directories
+RewriteRule ^(vendor|\.git|\.env) - [F,L]
+
+# Prevent directory listing
+Options -Indexes
+
+# ============================================
+# FRIENDLY URL ROUTING
+# ============================================
+
+# Public Pages (no file extension needed)
+RewriteRule ^/?$ index.php [L,QSA]
+RewriteRule ^home/?$ index.php [L,QSA]
+RewriteRule ^about/?$ about.php [L,QSA]
+RewriteRule ^contact/?$ contact_us.php [L,QSA]
+RewriteRule ^shop/?$ produits [L,QSA]
+
+# Form Actions (handle POST)
 RewriteRule ^send-message/?$ send.php [L,QSA]
-
-# Product / ordering related endpoints
+RewriteRule ^done/?$ produits/done.php [L,QSA]
 RewriteRule ^submit-order/?$ produits/order.php [L,QSA]
-RewriteRule ^produits-main/?$ produits/main.php [L,QSA]
-RewriteRule ^upload-product/?$ uploads/index.php [L,QSA]
+RewriteRule ^checkout/?$ produits/main.php [L,QSA]
 
-# Admin / management endpoints
+
+# Product Management
+RewriteRule ^manage-categories/?$ manage/categories.php [L,QSA]
 RewriteRule ^manage-edit/?$ manage/edit.php [L,QSA]
+RewriteRule ^manage-orders/?$ manage/orderlist.php [L,QSA]
 
-# Account / authentication endpoints
+# Account / Authentication
 RewriteRule ^register/?$ cree_compte/main.php [L,QSA]
 RewriteRule ^verify-code/?$ cree_compte/verify_code_handler.php [L,QSA]
+RewriteRule ^login/?$ cree_compte/login.php [L,QSA]
+RewriteRule ^admin-login/?$ "admin login page/index.html" [L,QSA]
+RewriteRule ^admin-auth/?$ "admin login page/main.php" [L,QSA]
 
-# Contact form
-RewriteRule ^send-message/?$ send.php [L,QSA]
-
-# Admin login form (note: directory name contains spaces)
-RewriteRule ^admin-login/?$ admin\ login\ page/main.php [L,QSA]
-
-# Notes:
-# - Use the friendly path (e.g. <form action="/send-message" method="post">) instead of the real script path.
-# - The rules above are relative to the project folder; if you deploy under a different base, adjust RewriteBase accordingly.
-# - If you add new form scripts, add corresponding RewriteRule entries here.
+# File/Resource Access (allow direct access)
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]

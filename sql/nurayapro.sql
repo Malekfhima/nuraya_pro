@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 14, 2025 at 05:49 PM
+-- Generation Time: Nov 19, 2025 at 08:35 PM
 -- Server version: 11.7.2-MariaDB
 -- PHP Version: 8.2.12
 
@@ -85,7 +85,7 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`product_id`, `name`, `description`, `price`, `stock_quantity`, `category_id`, `image_url`, `created_at`, `updated_at`, `collection`) VALUES
-(17, 'efafaefqsdf', '87637354343123123', 546543.00, 453543543, 3, '../uploads/uploaded/1763132693_screencapture-iso-builder-zety-resume-final-resume-2025-05-25-17_00_221.png', '2025-11-14 15:04:53', '2025-11-14 15:04:53', NULL);
+(18, 't-shirt', 'lonou abyadh cha3cha3i', 50.00, 400, 3, '../uploads/uploaded/1763225262_9.webp', '2025-11-15 16:47:42', '2025-11-15 16:47:42', NULL);
 
 -- --------------------------------------------------------
 
@@ -149,13 +149,13 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `user`

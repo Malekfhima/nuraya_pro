@@ -1,5 +1,4 @@
 <?php
-session_start();
 // Navbar partial: matches about.html theme
 ?>
 <style>
@@ -17,14 +16,14 @@ session_start();
 
 <header>
     <nav class="navbar">
-        <a class="logo" href="index.html">nuraya</a>
+        <a class="logo" href="/nuraya_pro/home">nuraya</a>
         <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="produits/index.php">Shop</a></li>
-            <li><a href="about.html">About</a></li>
+            <li><a href="/nuraya_pro/home">Home</a></li>
+            <li><a href="/nuraya_pro/shop">Shop</a></li>
+            <li><a href="/nuraya_pro/about">About</a></li>
+            <li><a href="/nuraya_pro/contact">Contact</a></li>
         </ul>
         <div class="icons">
-            <a href="panier.php" class="cart-icon"><i class="fas fa-shopping-bag"></i><span class="cart-count"><?php echo isset($_SESSION['panier'])?count($_SESSION['panier']):0; ?></span></a>
         </div>
     </nav>
 </header>

@@ -10,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $quantity = (int)$_POST['quantity'];
     $category = (int)$_POST['category'];
 
-    $upload_dir = "../uploads/uploaded/";
+    $upload_dir = "uploaded/";
     $img_name = basename($_FILES["pro_images"]["name"]);
     $img_name = preg_replace("/[^A-Za-z0-9.\-_]/", '', $img_name); // Nettoyer le nom
     $pro_images = $upload_dir . time() . "_" . $img_name; // Renommer avec timestamp
@@ -34,7 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 ?>
-<!DOCTYPE html>
+<!DOC````TYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -133,7 +133,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <option value="<?php echo $t['category_id']; ?>"><?php echo htmlspecialchars($t['name']); ?></option>
           <?php endwhile; ?>
         </select>
-        <div class="input-hint">Select a category for your product or <a href="../manage/categories.php" style="color: #667eea; text-decoration: none; font-weight: 600;">manage categories</a></div>
+        <div class="input-hint">Select a category for your product or <a href="../manage-categories" style="color: #667eea; text-decoration: none; font-weight: 600;">manage categories</a></div>
       </div>
 
       <div class="form-group">

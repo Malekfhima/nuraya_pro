@@ -28,7 +28,7 @@ $i = 0 ;
         .cart-icon{position:relative}
         .cart-count{position:absolute;top:-6px;right:-8px;background:var(--accent);color:#fff;border-radius:50%;width:18px;height:18px;display:flex;align-items:center;justify-content:center;font-size:11px}
         @media (max-width:768px){.nav-links{display:none}}
-        
+
         /* Featured Products Section */
         .featured-products{max-width:1200px;margin:40px auto;padding:0 24px}
         .section-title{font-size:24px;margin-bottom:24px;color:var(--primary);font-weight:700}
@@ -42,7 +42,7 @@ $i = 0 ;
         .current-price{color:var(--accent);font-weight:800;font-size:16px}
         .add-to-cart{background:var(--primary);color:white;border:none;width:38px;height:38px;border-radius:8px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background 0.3s}
         .add-to-cart:hover{background:var(--accent)}
-        
+
         /* Cart Modal */
         .modal-overlay{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.5);display:none;align-items:center;justify-content:center;z-index:1000}
         .modal-overlay.show{display:flex}
@@ -56,7 +56,7 @@ $i = 0 ;
         .cart-total{padding:20px;border-top:1px solid #e5e7eb;font-weight:700;text-align:right;color:var(--primary)}
         .checkout-btn{width:100%;padding:12px;background:var(--primary);color:white;border:none;border-radius:8px;font-weight:700;cursor:pointer;margin-top:10px}
         .checkout-btn:hover{background:var(--accent)}
-        
+
         /* Cart Item Styles */
         .cart-item{display:flex;gap:12px;padding:12px;border-bottom:1px solid #e5e7eb;align-items:flex-start}
         .cart-item-img{width:70px;height:70px;object-fit:cover;border-radius:6px;background:#f0f0f0}
@@ -67,32 +67,27 @@ $i = 0 ;
         .cart-item-remove:hover{color:var(--accent)}
         .cart-item-quantity{font-weight:700;color:var(--primary);font-size:14px}
         
-        @media (max-width:768px){.products{grid-template-columns:1fr}}
+        /* Floating Cart Badge */
+        .floating-cart-badge{position:fixed;bottom:30px;right:30px;z-index:999;background:var(--primary);color:white;width:60px;height:60px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(0,0,0,0.2);transition:all 0.3s ease;border:none;font-size:24px}
+        .floating-cart-badge:hover{background:var(--accent);transform:scale(1.1);box-shadow:0 6px 24px rgba(0,0,0,0.3)}
+        .floating-cart-badge .cart-count{position:absolute;top:-5px;right:-5px;background:var(--accent);color:white;width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700}
+
+        @media (max-width:768px){.products{grid-template-columns:1fr}.floating-cart-badge{bottom:20px;right:20px;width:50px;height:50px}.floating-cart-badge i{font-size:20px}}
     </style>
 </head>
 <body>
     <header>
-        <nav class="navbar">
-            <a class="logo" href="../index.html">nuraya</a>
-            <ul class="nav-links">
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="../about.html">About</a></li>
-                <li><a href="../contact_us.php">Contact</a></li>
-            </ul>
-            <div class="icons">
-                <a href="#" class="cart-icon"><i class="fas fa-shopping-bag"></i><span class="cart-count">0</span></a>
-            </div>
-        </nav>
+        <?php include('../navbar.php');?>
     </header>
     <section class="featured-products">
         <h2 class="section-title">Featured Products</h2>
         <div class="products">
-            <?php while($t= mysqli_fetch_assoc($result)) : 
+            <?php while($t= mysqli_fetch_assoc($result)) :
             $i++ ;
             ?>
             <div class="product-card">
                 <div class="product-image">
-                    <img src="<?php echo $t['image_url'] ; ?>" alt="<?php echo htmlspecialchars($t['name']); ?>" loading="lazy" style="width:100%;height:100%;object-fit:cover;">
+                    <img src="../<?php echo $t['image_url'] ; ?>" alt="<?php echo htmlspecialchars($t['name']); ?>" loading="lazy" style="width:100%;height:100%;object-fit:cover;">
                 </div>
                 <div class="product-info">
                     <h3 class="product-title"><?php echo $t['name'] ; ?></h3>
@@ -108,7 +103,7 @@ $i = 0 ;
             </div>
         <?php endwhile ; ?>
     </section>
-                    
+
     <div class="modal-overlay">
         <div class="cart-modal">
             <div class="cart-header">
@@ -117,7 +112,7 @@ $i = 0 ;
                     <i class="fas fa-times"></i>
                 </button>
             </div>
-            <form action="main.php" method="post">
+            <form action="../checkout" method="post">
                 <div class="cart-items">
                     <!-- Cart items will be added here dynamically -->
                     <div class="empty-cart">
@@ -132,6 +127,13 @@ $i = 0 ;
             </form>
         </div>
     </div>
+    
+    <!-- Floating Cart Badge -->
+    <button class="floating-cart-badge" id="floatingCartBadge">
+        <i class="fas fa-shopping-bag"></i>
+        <span class="cart-count" id="cartBadgeCount">0</span>
+    </button>
+    
     <script src="main.js?v=<?php echo time(); ?>"></script>
     <?php mysqli_close($cnx); ?>
     </body>

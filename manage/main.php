@@ -86,7 +86,7 @@ if ($dl == 1 && $id > 0) {
 <body>
     <div class="form-container">
         <h2><i class="fas fa-edit"></i> EDIT PRODUCT</h2>
-        <form id="productForm" method="post" action="edit.php" enctype="multipart/form-data">
+        <form id="productForm" method="post" action="/nuraya_pro/manage-edit" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="photos">
                     <i class="fas fa-images"></i> Photo actuelle

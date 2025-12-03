@@ -2,29 +2,29 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('main.js loaded');
     
     // Cart Functionality
-    const cartIcon = document.querySelector('.cart-icon');
+    const floatingCartBadge = document.querySelector('#floatingCartBadge');
     const cartModal = document.querySelector('.modal-overlay');
     const closeCart = document.querySelector('.close-cart');
     const cartItemsContainer = document.querySelector('.cart-items');
     const cartTotalSpan = document.querySelector('.cart-total span');
-    const cartCount = document.querySelector('.cart-count');
+    const cartBadgeCount = document.querySelector('#cartBadgeCount');
     const addToCartBtns = document.querySelectorAll('.add-to-cart');
 
-    console.log('Elements found:', { cartIcon, cartModal, closeCart, cartItemsContainer, cartTotalSpan, cartCount, btnCount: addToCartBtns.length });
+    console.log('Elements found:', { floatingCartBadge, cartModal, closeCart, cartItemsContainer, cartTotalSpan, cartBadgeCount, btnCount: addToCartBtns.length });
 
     let cart = [];
 
     // Initialize cart count visibility
-    if (cartCount) {
-        cartCount.style.visibility = 'hidden';
-        cartCount.textContent = '0';
+    if (cartBadgeCount) {
+        cartBadgeCount.style.visibility = 'hidden';
+        cartBadgeCount.textContent = '0';
     }
 
-    // Open/Close Cart
-    if (cartIcon && cartModal) {
-        cartIcon.addEventListener('click', function(e) {
+    // Open/Close Cart with floating badge
+    if (floatingCartBadge && cartModal) {
+        floatingCartBadge.addEventListener('click', function(e) {
             e.preventDefault();
-            console.log('Cart icon clicked, toggling show class');
+            console.log('Floating cart badge clicked, toggling show class');
             cartModal.classList.toggle('show');
         });
     }
@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const id = this.getAttribute('data-id');
             const name = this.getAttribute('data-name');
             const price = parseFloat(this.getAttribute('data-price')) || 0;
-            const image = this.getAttribute('data-image') || '';
+            const image = "../"+this.getAttribute('data-image') ;
             const idp = this.getAttribute('data-product-id');
 
             console.log('Add to cart:', { id, name, price, idp });
@@ -90,10 +90,19 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         // Update cart count
-        if (cartCount) {
+        if (cartBadgeCount) {
             const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
-            cartCount.textContent = totalItems;
-            cartCount.style.visibility = totalItems > 0 ? 'visible' : 'hidden';
+            cartBadgeCount.textContent = totalItems;
+            cartBadgeCount.style.visibility = totalItems > 0 ? 'visible' : 'hidden';
+            
+            // Add pulse animation to floating cart when it has items
+            if (floatingCartBadge) {
+                if (totalItems > 0) {
+                    floatingCartBadge.classList.add('has-items');
+                } else {
+                    floatingCartBadge.classList.remove('has-items');
+                }
+            }
         }
 
         // Update cart items display

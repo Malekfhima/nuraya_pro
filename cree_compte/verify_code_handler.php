@@ -57,7 +57,7 @@ try {
     $_SESSION['authenticated'] = true;
     unset($_SESSION['verification_code']);
     
-    header("Location: ../index.html");
+    header("Location: ../index.php");
     exit();
 
 } catch (Exception $e) {

@@ -77,7 +77,7 @@ if($_SERVER['REQUEST_METHOD'] === "POST"){
     $result = mysqli_query($cnx , "INSERT into orders (Fname,Lname,addr,codep,city,tel,email,list_qua,list_ids) values('$Fname','$Lname','$addr','$codep','$city','$tel','$email','$list_qua','$list_ids');");
     
     if ($result) {
-        header("Location: ../produits/done.php");
+        header("Location: done");
     } else {
         $_SESSION['order_errors'] = array("Database error: " . mysqli_error($cnx));
         header("Location: main.php?" . http_build_query($_POST));

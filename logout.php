@@ -2,7 +2,7 @@
 session_start();
 require_once 'cnx.php';
 if (!isset($_SESSION['user_id'])) {
-    header("Location: index.html");
+    header("Location: index.php");
     exit();
 }
 $user_id = $_SESSION['user_id'];
@@ -53,6 +53,6 @@ session_destroy();
 setcookie('remember_token', '', time() - 3600, '/');
 
 mysqli_close($cnx);
-header("Location: index.html");
+header("Location: index.php");
 exit();
 ?>

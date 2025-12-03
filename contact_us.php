@@ -10,15 +10,6 @@
         :root{--primary:#000;--muted:#6b7280;--accent:#ff6b6b;--bg:#f9f9f9}
         *{box-sizing:border-box;margin:0;padding:0}
         body{font-family:'Montserrat',sans-serif;background:var(--bg);color:#111}
-        /* Navbar */
-        .navbar{display:flex;align-items:center;justify-content:space-between;padding:18px 28px;background:transparent}
-        .navbar .logo{font-weight:700;font-size:20px;color:var(--primary);text-decoration:none}
-        .nav-links{display:flex;gap:18px;list-style:none;margin:0;padding:0;align-items:center}
-        .nav-links a{color:var(--primary);text-decoration:none;font-weight:600;padding:8px 10px;border-radius:6px}
-        .nav-links a:hover{color:var(--accent)}
-        .icons{display:flex;gap:12px;align-items:center}
-        .cart-icon{position:relative}
-        .cart-count{position:absolute;top:-6px;right:-8px;background:var(--accent);color:#fff;border-radius:50%;width:18px;height:18px;display:flex;align-items:center;justify-content:center;font-size:11px}
         
         /* Page */
         .page-wrap{max-width:900px;margin:40px auto;padding:30px}

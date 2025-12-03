@@ -11,18 +11,6 @@
         *{box-sizing:border-box;margin:0;padding:0}
         body{font-family:'Montserrat',sans-serif;background:var(--bg);color:#333;line-height:1.6}
         
-        /* Navbar */
-        .navbar{display:flex;align-items:center;justify-content:space-between;padding:18px 28px;background:transparent}
-        .navbar .logo{font-weight:700;font-size:20px;color:var(--primary);text-decoration:none}
-        .nav-links{display:flex;gap:18px;list-style:none;margin:0;padding:0;align-items:center}
-        .nav-links a{color:var(--primary);text-decoration:none;font-weight:600;padding:8px 10px;border-radius:6px;transition:color 0.3s}
-        .nav-links a:hover{color:var(--accent)}
-        .icons{display:flex;gap:12px;align-items:center}
-        .cart-icon{position:relative;cursor:pointer;color:var(--primary);text-decoration:none}
-        .cart-icon:hover{color:var(--accent)}
-        .cart-count{position:absolute;top:-6px;right:-8px;background:var(--accent);color:#fff;border-radius:50%;width:18px;height:18px;display:flex;align-items:center;justify-content:center;font-size:11px}
-        @media (max-width:768px){.nav-links{display:none}}
-        
         /* Hero Section */
         .hero{background:linear-gradient(135deg,#000 0%,#1a1a1a 100%);color:white;padding:80px 28px;text-align:center;border-radius:12px;margin:30px 28px}
         .hero h1{font-size:48px;margin-bottom:16px;letter-spacing:2px}
@@ -78,17 +66,7 @@
 </head>
 <body>
     <header>
-        <nav class="navbar">
-            <a class="logo" href="index.html">nuraya</a>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="produits/index.php">Shop</a></li>
-                <li><a href="contact_us.php">Contact</a></li>
-            </ul>
-            <div class="icons">
-                <a href="produits/index.php" class="cart-icon"><i class="fas fa-shopping-bag"></i><span class="cart-count">0</span></a>
-            </div>
-        </nav>
+        <?php include('navbar.php'); ?>
     </header>
     
     <section class="hero">
@@ -164,7 +142,7 @@
         <section class="section" style="text-align:center;background:white;padding:40px;border-radius:10px">
             <h2 class="section-title" style="text-align:center;margin-bottom:16px">Ready to Join Us?</h2>
             <p style="color:var(--muted);margin-bottom:24px;font-size:15px">Explore our collection and discover products that resonate with your values.</p>
-            <a href="produits/index.php" class="cta-button">Shop Now</a>
+            <a href="shop" class="cta-button">Shop Now</a>
         </section>
     </div>
 </body>
